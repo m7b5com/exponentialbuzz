@@ -10,34 +10,31 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 				<?php get_sidebar( 'footer' ); ?>
 				<div class="custom-footer">
 					<div class="er-custom-footer">
-						<div class="container er-cont-footer">
-							<div class="er-bsocials">
-								<div class="er-sicons"><a href="https://www.facebook.com/exponentialbuzz/" target="_blank"><img src="/wp-content/uploads/2018/03/fcb.png" /></a></div>
-								<div class="er-sicons"><a href="https://twitter.com/xponentialbuzz" target="_blank"><img src="/wp-content/uploads/2018/03/twt.png" /></a></div>
-								<div class="er-sicons"><a href="https://www.linkedin.com/company/exponential-buzz/?irgwc=1" target="_blank"><img src="/wp-content/uploads/2018/03/link.png" /></a></div>
-								<!-- <div class="er-sicons"><a href="#" target="_blank"><img src="/wp-content/uploads/2018/03/inst.png" /></a></div> -->
+						<?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
+							<div id="et-footer-nav">
+								<?php
+									wp_nav_menu( array(
+										'theme_location' => 'footer-menu',
+										'depth'          => '1',
+										'menu_class'     => 'bottom-nav',
+										'container'      => '',
+										'fallback_cb'    => '',
+									) );
+								?>
 							</div>
+						<?php endif; ?>
+
+						<div class="er-bsocials">
+							<div class="er-sicons"><a href="https://www.facebook.com/exponentialbuzz/" target="_blank"><img src="/wp-content/uploads/2018/03/fcb.png" /></a></div>
+							<div class="er-sicons"><a href="https://twitter.com/xponentialbuzz" target="_blank"><img src="/wp-content/uploads/2018/03/twt.png" /></a></div>
+							<div class="er-sicons"><a href="https://www.linkedin.com/company/exponential-buzz/?irgwc=1" target="_blank"><img src="/wp-content/uploads/2018/03/link.png" /></a></div>
+							<!-- <div class="er-sicons"><a href="#" target="_blank"><img src="/wp-content/uploads/2018/03/inst.png" /></a></div> -->
+							<div class="er-fcopyright">Copyright 2018. Exponential.buzz. All right reserved.</div>
 						</div>
 					</div>
-		<?php
-			if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
-				<div id="et-footer-nav">
-					<div class="container">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'footer-menu',
-								'depth'          => '1',
-								'menu_class'     => 'bottom-nav',
-								'container'      => '',
-								'fallback_cb'    => '',
-							) );
-						?>
-					</div>
-				</div> <!-- #et-footer-nav -->
-				<div class="er-fcopyright">Copyright 2018. Exponential.buzz. All right reserved.</div>
+
 			</div>
-			<?php endif; ?>
 				<div id="footer-bottom">
 					<div class="container clearfix">
 

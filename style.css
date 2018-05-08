@@ -421,12 +421,12 @@ ul li:before {
 }
 
 .er-fcopyright {
-	text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 13px;
-	color: #516a7e;
-  font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #405363;
+    font-weight: 300;
 }
 
 .carousel-slider .carousel-slider__caption .caption {
@@ -1278,12 +1278,27 @@ body #page-container .et_pb_button_2 {
 	background: #0a2337;
 	padding: 0 0 2px 0;
 	text-align: center;
-		border-top: 1px solid #0d2f4a;
+	border-top: 1px solid #0d2f4a;
+}
+
+.custom-footer .er-custom-footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: space-between;
 }
 
 .er-bsocials {
-	width: 100%;
-	margin: 0 auto;
 	text-align: center;
 	padding: 30px 0 10px 0;
 }
@@ -1295,24 +1310,24 @@ body #page-container .et_pb_button_2 {
 	padding: 15px 30px;
 }
 
-.er-sicons:hover {
-	background: url(/wp-content/uploads/2018/03/si-hover-e1521718437479.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .custom-footer #menu-footer-menu {
-	text-align: center;
+	text-align: left;
 	display: none;
 }
 
 .custom-footer #menu-footer-menu li {
+    display: inline-block;
 	position: relative;
-	font-weight: 700;
-	margin: 0 10px;
+	margin: 6px 0;
 }
 
-.custom-footer #menu-footer-menu li:before {
+.custom-footer #menu-footer-menu li a {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+/*.custom-footer #menu-footer-menu li:before {
 	position: absolute;
 	top: 9px;
 	right: -3px;
@@ -1326,7 +1341,7 @@ body #page-container .et_pb_button_2 {
 
 .custom-footer #menu-footer-menu li:last-child::before {
 	display: none;
-}
+}*/
 
 #footer-bottom,
 .hiddenElement {
@@ -1334,33 +1349,69 @@ body #page-container .et_pb_button_2 {
 }
 
 @media only screen and (min-width: 980px) {
+    #footer-widgets {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
 	#footer-widgets .footer-widget:nth-child(n), .footer-widget .fwidget {
-		width: 320px!important;
+
 	}
 	.footer-widget {
-		display: inline-block;
-		width: 320px!important;
-	border-left: 1px solid #0d2f4a;
-  padding: 30px;
-		border-bottom: none;
+        display: inline-block;
+        border-left: 1px solid #0d2f4a;
+        padding: 30px 30px 30px 42px;
+        border-bottom: none;
 	}
 
 	.footer-widget:last-child {
 		border-right: 1px solid 	#0d2f4a;
 	}
 
+    .custom-footer .er-custom-footer {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1020px;
+    }
+
+    .custom-footer {
+        padding: 40px 0;
+    }
+
 	.custom-footer #menu-footer-menu {
-		display: block;
+        display: inline-block;
+        width: 560px;
 	}
 
+    .custom-footer #menu-footer-menu li {
+        width: 160px;
+    }
+
+    .custom-footer #menu-footer-menu li:nth-child(odd) {
+        width: 370px;
+    }
+
 	.er-bsocials {
-		padding: 40px 0 30px 0;
+		padding: 40px 0 0 0;
 	}
 
 	.er-sicons {
 		width: auto;
-		padding: 20px 40px;
+		padding: 22px 40px;
 	}
+
+    .er-sicons:hover {
+        background: url(/wp-content/uploads/2018/03/si-hover-e1521718437479.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80px;
+    }
+
+    .er-fcopyright {
+        margin-top: 30px;
+    }
 }
 
 /* BLOG */
