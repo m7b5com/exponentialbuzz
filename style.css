@@ -134,8 +134,6 @@ ul li:before {
 	}
 }
 
-
-
 #er-ppc {
 	height: 90vh !important;
 }
@@ -255,6 +253,53 @@ ul li:before {
 	}
 }
 
+#readMoreSection {
+    height: 315px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.readMoreToggle {
+    display: block;
+    position: relative;
+    background: #FFF;
+    color:#0a2235;
+    margin: 25px 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 900;
+    border: none;
+    outline: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.readMoreToggle:hover {
+    color: #777e86;
+}
+
+.readMoreToggle:hover::after {
+    background: #777e86;
+}
+
+.readMoreToggle:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: #0a2235;
+    content:'';
+    transition: all 0.2s ease;
+}
+
+.toggleSection {
+    overflow: visible!important;
+    height: auto!important;
+}
+
 .white-section h2  {
   font-size: 48px;
   font-weight: 700;
@@ -283,16 +328,56 @@ ul li:before {
 }
 
 .er-boxes {
-	padding-left:50px;
-	padding-right: 50px;
-	height: 200px;
+    position: relative;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    border-top: 1px solid #ededed;
+}
+
+.er-boxes.first {
+    border-top: none;
+}
+
+.er-boxes.open:after {
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.er-boxes:after {
+    display: block;
+    position: absolute;
+    top: 58px;
+    right: 40px;
+    border: solid #0a2337;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    content:'';
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 0;
+    transition: all 0.2s ease;
+}
+
+.er-boxes-text {
+    display: none;
+    margin: 30px 0 0 0;
+}
+
+#paidMobileImg, #displayMobileImg, #socialMobileImg, #remarketingMobileImg {
+    display: none;
+}
+
+.et_pb_section.white-section {
+    padding: 0!important;
 }
 
 #why-ppc-section-title {
 	position: relative;
 	margin-left: 46px;
 }
-
 
 #why-ppc-section-title:before {
 	position: absolute;
@@ -306,10 +391,48 @@ ul li:before {
 	border-radius: 4px;
 }
 
+@media only screen and (max-width: 980px) {
+    #why-ppc-boxes-wrap div {
+        width: 100%!important;
+    }
+}
+
 @media only screen and (min-width: 980px) {
+
+    #prva-slika,
+    #druga-slika,
+    #treca-slika,
+    #cetvrta-slika {
+        padding: 0!important;
+    }
+
+    .er-boxes {
+        height: 200px;
+        padding: 50px;
+        box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
+    }
+
+    .er-boxes:after {
+        display: none;
+    }
+
+    .er-boxes-text {
+        display: block;
+        margin: 0;
+    }
+
 	#why-ppc-section-title:before {
 		top: 22px;
 	}
+
+    #readMoreSection {
+        overflow: visible!important;
+        height: auto!important;
+    }
+
+    .et_pb_section.white-section {
+        padding: 50px 0!important;
+    }
 }
 
 #why-ppc-section-text {
@@ -370,7 +493,7 @@ ul li:before {
 }
 
 .er-fc-img {
-	padding-right: 10px;
+	padding-right: 20px;
 }
 
 .er-fc-txt p {
@@ -425,7 +548,7 @@ ul li:before {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 13px;
-    color: #405363;
+    color: #FFF;
     font-weight: 300;
 }
 
@@ -756,7 +879,6 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 	.er-bsocials {
 		width: 100%;
 		margin-left: 0px;
-		margin-bottom: 20px;
 	}
 
 	.er-bmenu {
@@ -769,11 +891,6 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 
 	.er-img-delete {
 		display: none;
-	}
-
-	.er-boxes-1{
-		border-top: 3px solid #efefef;
-    margin-top: 20px;
 	}
 
 	.carousel-slider .carousel-slider__item {
@@ -843,6 +960,7 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 #treca-slika,
 #cetvrta-slika {
 	cursor: pointer;
+    padding: 40px;
 }
 
 /* CSS update on bete */
@@ -1027,7 +1145,7 @@ body #page-container .et_pb_button_2 {
 }
 
 #why-ppc {
-	margin-bottom:-80px;
+	margin-bottom:-96px;
 }
 
 .er-success-result h2 {
@@ -1165,6 +1283,7 @@ body #page-container .et_pb_button_2 {
 		margin-bottom: 0;
 		padding: 60px 0 0 0;
 		overflow: hidden;
+        margin-bottom: -80px;
 	}
 
 	#why-ppc .et_pb_column_0 {
@@ -1282,20 +1401,7 @@ body #page-container .et_pb_button_2 {
 }
 
 .custom-footer .er-custom-footer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    justify-content: space-between;
-    -ms-flex-pack: space-between;
+    width: 100%;
 }
 
 .er-bsocials {
@@ -1312,17 +1418,24 @@ body #page-container .et_pb_button_2 {
 
 .custom-footer #menu-footer-menu {
 	text-align: left;
-	display: none;
+	display: block;
+    width: 100%;
+}
+
+.bottom-nav {
+    padding: 0 0!important;
 }
 
 .custom-footer #menu-footer-menu li {
-    display: inline-block;
-	position: relative;
-	margin: 6px 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #142c3f;
+    text-align: center;
 }
 
 .custom-footer #menu-footer-menu li a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.4px;
 }
@@ -1371,6 +1484,20 @@ body #page-container .et_pb_button_2 {
 	}
 
     .custom-footer .er-custom-footer {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        justify-content: space-between;
+        -ms-flex-pack: space-between;
         width: 80%;
         margin: 0 auto;
         max-width: 1020px;
@@ -1386,11 +1513,21 @@ body #page-container .et_pb_button_2 {
 	}
 
     .custom-footer #menu-footer-menu li {
+        display: inline-block;
+        position: relative;
+        margin: 6px 0;
         width: 160px;
+        border-bottom: none;
+        text-align: left;
+        padding: 0;
     }
 
     .custom-footer #menu-footer-menu li:nth-child(odd) {
         width: 370px;
+    }
+
+    .custom-footer #menu-footer-menu li a {
+        font-size: 14px;
     }
 
 	.er-bsocials {
@@ -1411,6 +1548,7 @@ body #page-container .et_pb_button_2 {
 
     .er-fcopyright {
         margin-top: 30px;
+        color: #405363;
     }
 }
 

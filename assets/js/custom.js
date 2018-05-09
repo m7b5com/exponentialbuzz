@@ -1,8 +1,22 @@
 (function($){
     $(document).ready(function(){
 
-        // WHY PPC SECTION
+        // READ MORE TOGGLE
+        $('.readMoreToggle').click(function(){
 
+            var open = 'toggleSection';
+
+            $('#readMoreSection').toggleClass(open);
+
+            if ($('#readMoreSection').hasClass(open)) {
+                $('.readMoreToggle').html('Read Less');
+            }
+            else {
+                $('.readMoreToggle').html('Read More');
+            }
+        });
+
+        // WHY PPC SECTION
         if($(window).width() > 980) {
 
             $('.er-boxes').click(function(){
@@ -54,6 +68,36 @@
 
                 $(whyTitle).html(remarketingTitle);
                 $(whyText).html(remarketingText);
+            });
+        }
+
+        else {
+            // PAID SEARCH MOBILE IMAGE TOGGLE
+            $('#druga-slika').click(function(){
+                $('#paidMobileImg').stop().toggle(400);
+                $(this).find('.er-boxes-text').stop().toggle(200);
+                $(this).parentsUntil('.et_pb_column').toggleClass('open');
+            });
+
+            // DISPLAY MOBILE IMAGE TOGGLE
+            $('#prva-slika').click(function(){
+                $('#displayMobileImg').stop().toggle(400);
+                $(this).find('.er-boxes-text').stop().toggle(200);
+                $(this).parentsUntil('.et_pb_column').toggleClass('open');
+            });
+
+            // SOCIAL ADS MOBILE IMAGE TOGGLE
+            $('#treca-slika').click(function(){
+                $('#socialMobileImg').stop().toggle(400);
+                $(this).find('.er-boxes-text').stop().toggle(200);
+                $(this).parentsUntil('.et_pb_column').toggleClass('open');
+            });
+
+            // REMARKETING MOBILE IMAGE TOGGLE
+            $('#cetvrta-slika').click(function(){
+                $('#remarketingMobileImg').stop().toggle(400);
+                $(this).find('.er-boxes-text').stop().toggle(200);
+                $(this).parentsUntil('.et_pb_column').toggleClass('open');
             });
         }
     });
