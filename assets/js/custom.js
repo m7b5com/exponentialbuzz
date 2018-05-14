@@ -7,6 +7,7 @@
             var open = 'toggleSection';
 
             $('#readMoreSection').toggleClass(open);
+            $('#readMoreSection').toggleClass('shakeFx');
 
             if ($('#readMoreSection').hasClass(open)) {
                 $('.readMoreToggle').html('Read Less');

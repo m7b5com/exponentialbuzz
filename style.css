@@ -114,23 +114,8 @@ ul li:before {
 }
 
 #home-header-hero-ctn {
-    min-height: 90vh;
-    min-height: -webkit-calc(100vh - 76px);
-    min-height: -moz-calc(100vh - 76px);
-    min-height: calc(100vh - 76px);
     transition: min-height 1000s steps(1);
-}
-
-#home-header-hero-ctn #home-header-hero-content {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    width: 90%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    padding: 40px 0 120px 0;
 }
 
 
@@ -152,6 +137,7 @@ ul li:before {
     #home-header-hero-ctn {
         height: calc(100vh - 76px);
         min-height: 90vh;
+        padding: 0;
     }
 
 	#home-header-hero-ctn:after {
@@ -159,6 +145,18 @@ ul li:before {
     	width: 700px;
     	height: 170px;
 	}
+
+    #home-header-hero-ctn #home-header-hero-content {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        width: 90%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
 
     #er-ppc {
     	height: 90vh !important;
@@ -286,6 +284,7 @@ ul li:before {
     overflow: hidden;
 }
 
+
 .readMoreToggle {
     display: block;
     position: relative;
@@ -302,12 +301,29 @@ ul li:before {
     transition: all 0.2s ease;
 }
 
+.readMoreToggle:hover::after {
+    background: #777e86;
+}
+
 .readMoreToggle:hover {
     color: #777e86;
 }
 
-.readMoreToggle:hover::after {
-    background: #777e86;
+.shakeFx {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(0, 1px, 0);
+  }
 }
 
 .readMoreToggle:after {
@@ -341,7 +357,7 @@ ul li:before {
 
 .googlePartnerText {
 	display: block;
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	font-size: 14px;
 	font-weight: 700;
 	color: #4285f4;
@@ -425,6 +441,9 @@ ul li:before {
 }
 
 @media only screen and (min-width: 980px) {
+    .googlePartnerText {
+    	margin: 0 0 20px 0;
+    }
 
     #prva-slika,
     #druga-slika,
@@ -1122,10 +1141,10 @@ body #page-container .et_pb_button_2 {
 }
 
 .wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required.ico-message {
- height: 250px;
-	width: 100% !important;
-	background: white !important;
-	color: black !important;
+    height: 250px;
+    width: 100% !important;
+    background: white !important;
+    color: black !important;
 }
 
 .ico-form-wrap.wpcf7-form.wpcf7-form-control-wrap,
@@ -1136,8 +1155,8 @@ body #page-container .et_pb_button_2 {
 }
 
 .ico-send-wrap {
-	width: 200px;
-  border-radius: 0px !important;
+    width: 200px;
+    border-radius: 0px !important;
 }
 
 .wpcf7-form-control.wpcf7-submit.ico-send {
@@ -1149,7 +1168,7 @@ body #page-container .et_pb_button_2 {
 }
 
 .wpcf7-form-control.wpcf7-submit.ico-send {
-	 background: #f76a58;
+    background: #f76a58;
     width: 200px;
     height: 50px;
     color: white;
@@ -1160,39 +1179,39 @@ body #page-container .et_pb_button_2 {
 /*=== Success Stories ===*/
 
 .er-sstories-right {
-	border-top: 1px solid #eee;
-  padding-top: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
 }
 
 .er-sst-lft {
-	width: 80%;
-  float: left;
+    width: 80%;
+    float: left;
 }
 
 #why-ppc {
-	margin-bottom:-96px;
+	margin:-90px 0 -96px 0;
 }
 
 .er-success-result h2 {
-	font-weight: 700;
-  font-size: 48px;
-  text-align: center;
-	padding-bottom:30px;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    padding-bottom:30px;
 }
 
 
 .er-success-result h4 {
-	font-weight: bold !important;
-  text-transform: uppercase !important;
-  text-align: center;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    text-align: center;
 }
 
 .er-success-bottom-sec {
-	background: url(/wp-content/uploads/2018/03/oblak-desno-success.png);
-	background-position:right;
-  background-repeat: no-repeat;
+    background: url(/wp-content/uploads/2018/03/oblak-desno-success.png);
+    background-position:right;
+    background-repeat: no-repeat;
 }
 
 .et_header_style_left .mobile_menu_bar, .et_header_style_split .mobile_menu_bar {
@@ -1200,17 +1219,27 @@ body #page-container .et_pb_button_2 {
 }
 
 .at4-jumboshare .at4-count-container {
-	  min-width: 100px !important;
+    min-width: 100px !important;
     vertical-align: middle;
     border-right: 1px solid transparent !important;
     padding-right: 20px;
 }
 
+#success-slider-wrap {
+    margin-top: -90px;
+}
 
+#clients-logo-wrapper {
+    margin-top: -60px;
+}
+
+#clients-logo-wrapper .et_pb_row {
+    padding: 14px 0!important;
+}
 /* CUSTOM SHARES by ELDIN */
 
 .er-s-number {
-	  font-size: 40px;
+    font-size: 40px;
     color: #f82825;
     font-weight: bold;
     padding-bottom: 5px;
@@ -1218,17 +1247,17 @@ body #page-container .et_pb_button_2 {
 }
 
 .er-s-shares {
-	  font-size: 17px;
+    font-size: 17px;
     text-transform: uppercase;
     font-weight: bold;
     color: #777e86;
 }
 
 .er-showme{
-		display: none;
+    display: none;
 }
 .er-showhim:hover .er-showme{
-		display : -webkit-inline-box;
+    display : -webkit-inline-box;
 }
 
 .er-showme .et_pb_image_container img, .et_pb_post a img {
@@ -1242,6 +1271,10 @@ body #page-container .et_pb_button_2 {
 
 .er-s-upl {
 	padding-left:15px;
+}
+
+.sa_owl_theme .owl-dots .owl-dot.active span {
+    background-color: #f82825!important;
 }
 
 /* Full-screen sections on the Homepage - 2018-04-23 - Michael@m7b5.com */
@@ -1265,6 +1298,17 @@ body #page-container .et_pb_button_2 {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 10px 4px;
+}
+
+@media only screen and (min-width: 980px) {
+    #success-slider-wrap,
+    #clients-logo-wrapper {
+        margin-top: 0;
+    }
+
+    #clients-logo-wrapper .et_pb_row {
+        padding: 30px 0!important;
+    }
 }
 
 @media only screen and (min-width: 1110px) {
@@ -1307,7 +1351,6 @@ body #page-container .et_pb_button_2 {
 	#why-ppc {
 		position: relative;
 		height: 100vh;
-		margin-bottom: 0;
 		padding: 60px 0 0 0;
 		overflow: hidden;
         margin-bottom: -80px;
